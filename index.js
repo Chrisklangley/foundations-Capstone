@@ -8,9 +8,12 @@ const familyAttendace = document.querySelector(".fam-atendance");
 const funAttendace = document.querySelector(".justforfun-atendance");
 
 const forFunBtnJoin = () => {
-  axios.post("http://localhost:4292/forfunbtn").then(() => {});
-  petAttendance.textContent++;
-  alert("We'll See you There").catch((err) => console.log(err));
+  axios
+    .post("http://localhost:4292/forfunbtn")
+    .then(() => {})
+    .catch((err) => console.log(err));
+  funAttendace.textContent++;
+  alert("We'll See you There");
 };
 axios
   .get("http://localhost:4292/getJFfAtt")
@@ -23,9 +26,12 @@ axios
   });
 
 const famBtnJoin = () => {
-  axios.post("http://localhost:4292/fambtn").then(() => {});
+  axios
+    .post("http://localhost:4292/fambtn")
+    .then(() => {})
+    .catch((err) => console.log(err));
   familyAttendace.textContent++;
-  alert("yeahhh").catch((err) => console.log(err));
+  alert("yeahhh");
 };
 
 axios
@@ -48,13 +54,27 @@ axios
     console.log(err);
   });
 const petBtnJoin = () => {
-  axios.post("http://localhost:4292/petbtn").then(() => {});
+  axios
+    .post("http://localhost:4292/petbtn")
+    .then(() => {})
+    .catch((err) => console.log(err));
+  alert("We'll See you There");
   petAttendance.textContent++;
-  alert("We'll See you There").catch((err) => console.log(err));
 };
-justForFunBtn.addEventListener("click", forFunBtnJoin);
-famBtn.addEventListener("click", famBtnJoin);
-petBtn.addEventListener("click", petBtnJoin);
+const testAlr = () => {
+  alert("gey");
+};
+if (justForFunBtn) {
+  justForFunBtn.addEventListener("click", forFunBtnJoin);
+}
+
+if (famBtn) {
+  famBtn.addEventListener("click", famBtnJoin);
+}
+if (petBtn) {
+  petBtn.addEventListener("click", petBtnJoin);
+}
 toggleButton.addEventListener("click", () => {
   navBarLinks.classList.toggle("active");
 });
+console.log(justForFunBtn);

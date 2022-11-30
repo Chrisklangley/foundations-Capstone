@@ -51,7 +51,7 @@ module.exports = {
       .query(
         `
     INSERT INTO family_attendance(joined)
-    VALUES('chris');
+    VALUES('wyatt');
     `
       )
       .then(() => {
@@ -112,12 +112,14 @@ module.exports = {
         SELECT * 
         FROM users
         WHERE (email = '${email}' AND password= '${password}' );
+
     `
       )
+
       .then((user) => {
         const userLogin = user[0];
-
-        res.status(200).send(userLogin);
+        console.log(user);
+        res.sendStatus(200);
       })
       .catch((err) => console.log(err));
   },
