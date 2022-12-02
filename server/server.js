@@ -12,6 +12,7 @@ const {
   addToFam,
   getFunAtt,
   addToFun,
+  findFriend,
 } = require("./controller.js");
 
 const app = express();
@@ -29,42 +30,46 @@ app.post("/forfunbtn", addToFun);
 app.get("/getPetAtt", getPetAtt);
 app.get("/getfamAtt", getFamAtt);
 app.get("/getJFfAtt", getFunAtt);
+app.post("/findfriend", findFriend);
 
 // file endPoints
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../sign-in.html"));
+  res.sendFile(path.join(__dirname, "../client/sign-in.html"));
 });
 
 app.get("/styles", (req, res) => {
-  res.sendFile(path.join(__dirname, "../sign-in.css"));
+  res.sendFile(path.join(__dirname, "../client/sign-in.css"));
 });
 
 app.get("/js", (req, res) => {
-  res.sendFile(path.join(__dirname, "../script.js"));
+  res.sendFile(path.join(__dirname, "../client/script.js"));
 });
 
 app.get("/Home", (req, res) => {
-  res.sendFile(path.join(__dirname, "../Home.html"));
+  res.sendFile(path.join(__dirname, "../client/Home.html"));
 });
 app.get("/Pets", (req, res) => {
-  res.sendFile(path.join(__dirname, "../pets.html"));
+  res.sendFile(path.join(__dirname, "../client/pets.html"));
 });
 app.get("/family", (req, res) => {
-  res.sendFile(path.join(__dirname, "../family.html"));
+  res.sendFile(path.join(__dirname, "../client/family.html"));
 });
 app.get("/justforfun", (req, res) => {
-  res.sendFile(path.join(__dirname, "../justforfun.html"));
+  res.sendFile(path.join(__dirname, "../client/justforfun.html"));
 });
 app.get("/Events", (req, res) => {
-  res.sendFile(path.join(__dirname, "../events.html"));
+  res.sendFile(path.join(__dirname, "../client/events.html"));
+});
+app.get("/needafriend", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/needafriend.html"));
 });
 
 app.get("/styles2", (req, res) => {
-  res.sendFile(path.join(__dirname, "../index.css"));
+  res.sendFile(path.join(__dirname, "../client/index.css"));
 });
 app.get("/js2", (req, res) => {
-  res.sendFile(path.join(__dirname, "../index.js"));
+  res.sendFile(path.join(__dirname, "../client/index.js"));
 });
 
 app.listen(port, () => console.log(`server listening on port ${port}`));

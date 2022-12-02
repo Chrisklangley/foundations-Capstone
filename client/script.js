@@ -21,8 +21,12 @@ const signIn = (event) => {
   axios
     .post("http://localhost:4292/api/signin", body)
     .then((res) => {
-      console.log(res.data);
-      window.location.replace("/Home");
+      const [{ email: dbEmail, password: dbPassword }] = res.data;
+      if (dbEmail === email && dbPassword === password) {
+        window.location.replace("/Home");
+      } else {
+        alert("email or password is incorrect");
+      }
     })
     .catch((err) => console.log(err));
 };
@@ -43,7 +47,6 @@ const signUp = (event) => {
     .post("http://localhost:4292/api/signup", body)
     .then((res) => {
       alert("User regestered :)");
-      console.log(res);
     })
     .catch((err) => {
       console.log(err);

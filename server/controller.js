@@ -18,6 +18,17 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
   },
 });
 module.exports = {
+  findFriend: (req, res) => {
+    const choice = req.body.userChoice;
+    console.log(choice);
+
+    if (choice === "pet_attendance") {
+    }
+    if (choice === "justForFun_attendance") {
+    }
+    if (choice === "family_attendance") {
+    }
+  },
   addToFun: (req, res) => {
     sequelize
       .query(
@@ -119,7 +130,7 @@ module.exports = {
       .then((user) => {
         const userLogin = user[0];
         console.log(user);
-        res.sendStatus(200);
+        res.status(200).send(userLogin);
       })
       .catch((err) => console.log(err));
   },

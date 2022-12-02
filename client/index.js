@@ -61,9 +61,7 @@ const petBtnJoin = () => {
   alert("We'll See you There");
   petAttendance.textContent++;
 };
-const testAlr = () => {
-  alert("gey");
-};
+
 if (justForFunBtn) {
   justForFunBtn.addEventListener("click", forFunBtnJoin);
 }
@@ -74,7 +72,7 @@ if (famBtn) {
 if (petBtn) {
   petBtn.addEventListener("click", petBtnJoin);
 }
+
 toggleButton.addEventListener("click", () => {
   navBarLinks.classList.toggle("active");
 });
-console.log(justForFunBtn);
