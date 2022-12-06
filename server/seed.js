@@ -71,6 +71,42 @@ module.exports = {
         VALUES('Dog Brunch', '220 Rose Ave, Venice, CA 90291', 'pets'),
         ('Ice at Santa Monica', '1324 5th St Santa Monica, CA 90401', 'family');
 
+        INSERT INTO pet_attendance(joined)
+        VALUES('AMY'),
+        ('John'),
+        ('Kate'),
+        ('Mckenna'),
+        ('Sam'),
+        ('Nick'),
+        ('Bobby'),
+        ('Frank'),
+        ('Kenny');
+
+        INSERT INTO family_attendance(joined)
+        VALUES('AMY'),
+        ('John'),
+        ('Kate'),
+        ('Mckenna'),
+        ('Sam'),
+        ('Nick'),
+        ('Bobby'),
+        ('Frank'),
+        ('Kenny');
+
+
+        INSERT INTO justForFun_attendance(joined)
+        VALUES('AMY'),
+        ('John'),
+        ('Kate'),
+        ('Mckenna'),
+        ('Sam'),
+        ('Nick'),
+        ('Bobby'),
+        ('Frank'),
+        ('Kenny');
+
+
+
 
     
       `

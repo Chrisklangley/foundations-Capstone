@@ -394,7 +394,8 @@ li a {
 .main {
   margin-top: 160px;
 }
-.your-partner {
+#your-partner,
+#interest {
   background-color: #fff;
   width: max-content;
   z-index: 2;

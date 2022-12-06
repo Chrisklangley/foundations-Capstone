@@ -71,5 +71,8 @@ app.get("/styles2", (req, res) => {
 app.get("/js2", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/index.js"));
 });
+app.get("/js3", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/radio.js"));
+});
 
 app.listen(port, () => console.log(`server listening on port ${port}`));

@@ -23,10 +23,38 @@ module.exports = {
     console.log(choice);
 
     if (choice === "pet_attendance") {
-    }
-    if (choice === "justForFun_attendance") {
-    }
-    if (choice === "family_attendance") {
+      sequelize
+        .query(
+          `
+    SELECT *
+    FROM pet_attendance;
+    `
+        )
+        .then((users) => {
+          res.status(200).send(users[0]);
+        });
+    } else if (choice === "justForFun_attendance") {
+      sequelize
+        .query(
+          `
+    SELECT *
+    FROM justforfun_attendance;
+    `
+        )
+        .then((users) => {
+          res.status(200).send(users[0]);
+        });
+    } else {
+      sequelize
+        .query(
+          `
+    SELECT *
+    FROM family_attendance;
+    `
+        )
+        .then((users) => {
+          res.status(200).send(users[0]);
+        });
     }
   },
   addToFun: (req, res) => {
